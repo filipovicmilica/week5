@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 
@@ -16,12 +20,13 @@
   <div class="main">
     <div class="definfer-mode">
       <span>devfinder</span>
-      <button class="btn-light">Light</button>
-      <button class="btn-dark">Dark</button>
+      <button class="btn-light" onclick='switchmode(2)' id="light">Light</button>
+      <button class="btn-dark" onclick='switchmode(1)' id="dark">Dark</button>
     </div>
 
     <div class="serch">
-      <input type="text" placeholder="Search GitHub username...">
+      <input type="text-search" placeholder="Search GitHub username...">
+      <span class="res-msg">No results</span>
       <button onclick='search()'>Search</button>
     </div>
 

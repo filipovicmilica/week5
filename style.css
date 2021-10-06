@@ -13,6 +13,10 @@ body{
     margin-top: 10%;
 }
 
+button{
+    cursor: pointer;
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -30,11 +34,24 @@ body{
 }
 .definfer-mode button{
     flex-basis: 20%;
+
+    font-family: Space Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: right;
+    letter-spacing: 2.5px;
+
+    background-size: 20px;
+
+    padding-right: 7%;
+    cursor: pointer;
 }
 .definfer-mode span{
     flex-basis: 80%;
     color: #222731;
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
@@ -47,8 +64,9 @@ body{
     background-image: url(assets/icon-moon.svg) ;
     background-position: right;
     background-repeat:no-repeat ;
-    background-size: contain;
     color: #222731;
+
+    /* visibility: hidden; */
 }
 .btn-light{
     background-color: transparent;
@@ -56,5 +74,19 @@ body{
     background-image: url(assets/icon-sun.svg) ;
     background-position: right;
     background-repeat:no-repeat ;
-    background-size: contain;
+    color: white;
+    transform: translate(100%,0%);
+    visibility: hidden;
+}
+
+.res-msg{
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 22px;
+
+    color: #F74646ed;
+
+    visibility: hidden;
 }
