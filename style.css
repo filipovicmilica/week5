@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #F6F8FF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 70%;
+}
+
+.definfer-mode{
+    background-color: transparent;
+    display: flex;
+    flex-basis: 100%;
+    width: 90%;
+}
+.definfer-mode button{
+    flex-basis: 20%;
+}
+.definfer-mode span{
+    flex-basis: 80%;
+    color: #222731;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 39px;
+}
+
+.btn-dark{
+    background-color: transparent;
+    border: 0px;
+    background-image: url(assets/icon-moon.svg) ;
+    background-position: right;
+    background-repeat:no-repeat ;
+    background-size: contain;
+    color: #222731;
+}
+.btn-light{
+    background-color: transparent;
+    border: 0px;
+    background-image: url(assets/icon-sun.svg) ;
+    background-position: right;
+    background-repeat:no-repeat ;
+    background-size: contain;
+}

@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+  <title>Week5</title>
 </head>
+
 <body>
+  <div class="main">
+    <div class="definfer-mode">
+      <span>devfinder</span>
+      <button class="btn-light">Light</button>
+      <button class="btn-dark">Dark</button>
+    </div>
 
-  devfinder
+    <div class="serch">
+      <input type="text" placeholder="Search GitHub username...">
+      <button onclick='search()'>Search</button>
+    </div>
 
-  Light
-  Dark
+    <div>
+      <div class="header">
+        <h2>The Octocat</h2>
+        <p> @octocat</p>
 
-  Search GitHub username...
-  Search
+        <span>
+          Joined
+          <input type="text" name="date">
+        </span>
 
-  Joined
+      </div>
+      <div class="header">
+        <!-- bio + date -->
+      </div>
+    </div>
 
-  Repos
-  Followers
-  Following
+    <table>
+      <tr>
+        <td>Repos</td>
+        <td>Followers</td>
+        <td>Following</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="Repos" value="" disabled>
+        </td>
+        <td>
+          <input type="text" name="Followers" value="" disabled>
+        </td>
+        <td>
+          <input type="text" name="Following" value="" disabled>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+
+      </tr>
+    </table>
+
+  </div>
 
 </body>
+
 </html>
