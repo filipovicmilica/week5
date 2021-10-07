@@ -100,6 +100,9 @@ button{
 
     /* visibility: hidden; */
 }
+.btn-dark:hover{
+    color:#90A4D4 ;
+}
 .btn-light{
     background-color: transparent;
     border: 0px;
@@ -107,6 +110,9 @@ button{
     background-position: right;
     background-repeat:no-repeat ;
     color: white;
+}
+.btn-ligh:hover{
+    color:#222731;
 }
 .dark-mode{
     background-color:#141D2F ;
@@ -160,7 +166,7 @@ button{
     flex-basis: 10%;
     width: 100%;
 
-    background: #60ABFF;
+    background: #0079ff;
     border-radius: 10px;
     padding:2%;
     border: 0px;
@@ -171,6 +177,9 @@ button{
     font-size: 13px;
 
     color: #FFFFFF;
+}
+.search button:hover{
+    background: #60ABFF;
 }
 .blank{
     flex-basis: 20%;
@@ -191,3 +200,91 @@ button{
     flex-basis: 20%;
 }
 
+/* infos */
+.info{
+    margin-top: 24px;
+
+    background: #FEFEFE;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    border-radius: 15px;
+
+    width: 100%;
+    padding: 2%;
+
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+.header img{
+    border-radius: 50%;
+    flex-basis: 10%;
+    width:100%;
+
+    margin: 5%;
+}
+.header section{
+    flex-basis: 90%;
+    width: 100%;
+}
+.inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.info h1{
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 39px;
+    color: #2B3442;
+
+    flex-basis: 50%;
+    margin-right: 5%;
+}
+.blue-header{
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0079FF;
+}
+
+.date{
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    color: #697C9A;
+    /* color: #FFFFFF; */
+    width: 100%;
+    flex-basis: 50%;
+    margin-top: 5px;
+}
+.bio{
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+    color: #4B6A9B;
+}
+
+@media (max-width:400px){
+    .info img{
+        width:70px;
+    }
+    .inner{
+        flex-direction: column;
+    }
+}
+@media (max-width:700px){
+    .inner{
+        flex-direction: column;
+    }
+}
