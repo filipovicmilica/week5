@@ -11,6 +11,7 @@ body{
     justify-content: center;
 
     margin-top: 10%;
+    transition: 0.9s;
 }
 
 button{
@@ -23,17 +24,34 @@ button{
     align-items: center;
     justify-content: center;
 
-    width: 70%;
+    width: 50%;
+}
+@media (max-width:370px){
+    .main{
+        width: 70%;
+    }
+}
+
+@media (max-width:700px){
+    .main{
+        width: 90%;
+    }
 }
 
 .definfer-mode{
     background-color: transparent;
+    margin-bottom: 36px;
+
     display: flex;
+    align-items: center;
+    justify-content: center;
+
     flex-basis: 100%;
-    width: 90%;
+    width: 100%;
 }
 .definfer-mode button{
-    flex-basis: 20%;
+    flex-basis: 10%;
+    float: right;
 
     font-family:'Space Mono', monospace;
     font-style: normal;
@@ -45,17 +63,31 @@ button{
 
     background-size: 20px;
 
-    padding-right: 7%;
-    cursor: pointer;
+    padding-right: 36px;
+    text-transform: uppercase;
+
+    width: 72px; 
+    height: 20px;
+    transition: 0.9s;
 }
+
 .definfer-mode span{
-    flex-basis: 80%;
+    flex-basis: 90%;
+    float: left;
     color: #222731;
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
     line-height: 39px;
+}
+@media (max-width:370px){
+    .definfer-mode button{
+        flex-basis: 50%;
+    }
+    .definfer-mode span{
+        flex-basis: 50%;
+    }
 }
 
 .btn-dark{
@@ -75,9 +107,14 @@ button{
     background-position: right;
     background-repeat:no-repeat ;
     color: white;
-    transform: translate(100%,0%);
-    visibility: hidden;
 }
+.dark-mode{
+    background-color:#141D2F ;
+}
+.div-dark-mode{
+    background-color:#1E2A47 ;
+}
+
 
 /* search */
 .search{
