@@ -219,6 +219,7 @@ button{
     align-items: center;
 }
 .header img{
+    float: left ;
     border-radius: 50%;
     flex-basis: 10%;
     width:100%;
@@ -273,6 +274,8 @@ button{
     font-size: 15px;
     line-height: 25px;
     color: #4B6A9B;
+
+    margin-top: 5px;
 }
 
 @media (max-width:400px){
@@ -288,3 +291,5 @@ button{
         flex-direction: column;
     }
 }
+
+/* links */
