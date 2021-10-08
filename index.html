@@ -16,8 +16,6 @@
 </head>
 
 <body>
-
-
   <div class="main">
     <div class="definfer-mode">
       <span id="devfinder">devfinder</span>
@@ -32,78 +30,91 @@
       </div>
       <button onclick='search()'>Search</button>
     </div>
-    <script src="script.js"></script>
 
     <div class="info" id="info">
       <div class="header">
-        <img src="assets/Bitmap.svg">
+        <!-- <img id='profile-img'> -->
+        <div id="profile-img">
+        </div>
         <section>
           <section class="inner">
             <h1 id="h1">
-              The Octocat
-              <p id="blue-header" class="blue-header"> @octocat</p>
+              <span id="name">
+                 <!-- The Octocat -->
+              </span>
+              <p id="login" class="blue-header">
+                 <!-- @octocat -->
+              </p>
             </h1>
+            <script src="script.js"></script>
 
             <span class="date" id="date">
-              Joined 25 Jan 2011
+              <!-- Joined 25 Jan 2011 -->
               <!-- <input type="text" name="date"> -->
             </span>
           </section>
-          <p class="bio">
-            Bio... a;kshg;dkjfbg;zdbfblzdbfgz
-            zdf;gzbdkfjbgzkjfbgzkfbg
-            zlfjdgbzlkdfbgzlk
+          <p class="bio" id='bio'>
+            <!-- Bio... -->
           </p>
         </section>
       </div>
+      <script src="script.js"></script>
 
       <section class="center">
         <div class="collumn-center">
           <h4>Repos</h4>
           <span class="location elem-center" id="repos">
-            8
+            <!-- 8 -->
           </span>
         </div>
 
         <div class="collumn-center">
           <h4>Folowers</h4>
-          <span class="elem-center" id="folowers">
-            3938
+          <span class="elem-center" id="followers">
+            <!-- 3938 -->
           </span>
         </div>
 
         <div class="collumn-center">
           <h4>Following</h4>
           <span id="following" class="elem-center">
-            9
+            <!-- 9 -->
           </span>
         </div>
       </section>
 
       <section class="footer">
         <div class="collumn">
-          <span class="location elem" id="location">
+          <span class="location elem" >
             <img src="assets/icon-location.svg">
-            San Francisco
+            <span id="location">
+              <!-- San Francisco -->
+            </span>
           </span>
 
           <a href="https://github.blog">
             <span class="elem">
               <img src="assets/icon-website.svg">
-              https://github.blog
+              <span id='blog'>
+                <!-- https://github.blog -->
+              </span>
             </span>
           </a>
         </div>
 
         <div class="collumn">
-          <span id="twitter" class="elem">
+          <span  class="elem">
             <img src="assets/icon-twitter.svg">
-            Not Available
+            <span id="twitter">
+              <!-- Not Available -->
+            </span>
           </span>
 
-          <span class="company elem" id="company">
+          <span class="company elem" >
             <img src="assets/icon-company.svg">
-            @github
+            <span id="company">
+              <!-- @github -->
+            </span>
           </span>
         </div>
       </section>

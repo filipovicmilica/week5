@@ -30,20 +30,157 @@ btnmode.onclick=function(){
     }
     
 }
+//initial state
+fetch("https://api.github.com/users/octocat")
+    .then(res=>res.json())
+    .then(user=>{
+        if(isNaN(user)){//if usr exist
+            //set img
+            //avatar_url
+            var img=document.getElementById('profile-img').innerHTML=`<img src=${user.avatar_url}>`;
+
+            //set Name:
+            var name=document.getElementById('name');
+            name.textContent=user.name;
+
+            //set mini header-blue:
+            var login=document.getElementById('login');
+            login.textContent="@"+user.login;
+
+            //set Joined:
+            var date=document.getElementById('date');
+            let d=new Date(user.created_at);
+            date.textContent="Joined "+ d.getUTCDate()+" " +months[d.getUTCMonth()]+" "+d.getUTCFullYear();
+            
+            //set Bio:
+            var bio=document.getElementById('bio');
+            if(isNaN(user.bio)){
+                bio.textContent=bio;
+            }else{bio.textContent="This profile has no bio."}
+
+            //set Repos:
+            var repos=document.getElementById('repos');
+            repos.textContent=user.public_repos;
+
+            //set Followers:
+            var followers=document.getElementById('followers');
+            followers.textContent=user.followers;
+
+            //set Following:
+            var following=document.getElementById('following');
+            following.textContent=user.following;
+
+            //set Location:
+            var location=document.getElementById('location');
+            location.textContent=user.location;
+
+            //set Twitter:
+            var twitter=document.getElementById('twitter');
+            if(isNaN(user.twitter_username)){
+                twitter.textContent=user.twitter_username;
+            }
+            else{
+                twitter.textContent="Not avalable";
+                //izbledi
+            }
+            
+            //set blog:
+            var blog=document.getElementById('blog');
+            blog.textContent=user.blog;
+
+            //set company:
+            var company=document.getElementById('company');
+            if(isNaN(user.company)){
+                company.textContent=user.company;
+            }else{
+                company.textContent="Has no company";
+                }
+            }
+
+        else{//user not exist
+            searchmsg.style.display='inline-block';
+        }
+    }).catch(e=>console.log(e))
 
 //search
-
-var allUsernames=['nakica','rale123','masamasnica'];
-
+var months=['Jan', 'Feb', 'Mar', 'Apr','May','Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'];
 var searchtext=document.getElementById('searchtext');
 var searchmsg=document.getElementById('searchmsg');
+
 function search(){
-    alert(allUsernames.length);
-    for(let i=0;i<allUsernames.length;i++){
-        if(allUsernames[i]==searchtext.value){
-            searchmsg.style.display='none';
+
+    fetch("https://api.github.com/users/"+searchtext.value)
+    .then(res=>res.json())
+    .then(user=>{
+        if(user.message=="Not Found"){//user not exist
+            searchmsg.style.display='inline-block';
             return;
         }
-    }
-    searchmsg.style.display='inline-block';
+        else{//if user exist
+            //set img
+            searchmsg.style.display='none';
+            var img=document.getElementById('profile-img').innerHTML=`<img src=${user.avatar_url}>`;
+
+            //set Name:
+            var name=document.getElementById('name');
+            name.textContent=user.name;
+
+            //set mini header-blue:
+            var login=document.getElementById('login');
+            login.textContent="@"+user.login;
+
+            //set Joined:
+            var date=document.getElementById('date');
+            let d=new Date(user.created_at);
+            date.textContent="Joined "+ d.getUTCDate()+" " +months[d.getUTCMonth()]+" "+d.getUTCFullYear();
+            
+            //set Bio:
+            var bio=document.getElementById('bio');
+            if(user.bio){
+                bio.textContent=bio;
+            }else{bio.textContent="This profile has no bio."}
+
+            //set Repos:
+            var repos=document.getElementById('repos');
+            repos.textContent=user.public_repos;
+
+            //set Followers:
+            var followers=document.getElementById('followers');
+            followers.textContent=user.followers;
+
+            //set Following:
+            var following=document.getElementById('following');
+            following.textContent=user.following;
+
+            //set Location:
+            var location=document.getElementById('location');
+            location.textContent=user.location;
+
+            //set Twitter:
+            var twitter=document.getElementById('twitter');
+            if(user.twitter_username){
+                twitter.textContent=user.twitter_username;
+            }
+            else{
+                twitter.textContent="Not avalable";
+                //izbledi
+            }
+            //set blog:
+            var blog=document.getElementById('blog');
+            if(user.blog){
+                blog.textContent="Not avalible.";
+                //izbledi
+            }else{blog.textContent=user.blog;}
+            
+
+            //set company:
+            var company=document.getElementById('company');
+            if(user.company){
+                company.textContent=user.company;
+            }else{
+                company.textContent="Not avalible.";
+                //izbledi
+                }
+            }
+    }).catch(e=>console.log(e))
 }
