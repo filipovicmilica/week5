@@ -5,17 +5,33 @@ var srch=document.getElementById('srch');
 var info=document.getElementById('info');
 var h1=document.getElementById('h1');
 var footerElems=document.getElementsByClassName('elem');
+var center=document.getElementById('center');
+var centerNumbers=document.getElementsByClassName('elem-center');
+var bio=document.getElementById('bio');
+var date=document.getElementById('date');
+var h4s=document.getElementsByTagName('h4');
+
+var searchtext=document.getElementById('searchtext');
 
 btnmode.onclick=function(){
-
     body.classList.toggle('dark-mode');//ubacuje/izbacuje ovu klasu ako je nema/ima
+    center.classList.toggle('dark-mode');
     btnmode.classList.toggle('btn-light');
     btnmode.classList.toggle('btn-dark');
+    date.classList.toggle('white-color');
+    bio.classList.toggle('white-color');
+    searchtext.classList.toggle('white-color');
 
     srch.classList.toggle('div-dark-mode');
     info.classList.toggle('div-dark-mode');
     for(let i=0;i<footerElems.length;i++){
         footerElems[i].classList.toggle('white-mode');
+    }
+    for(let i=0;i<centerNumbers.length;i++){
+        centerNumbers[i].classList.toggle('white-color');
+    }
+    for(let i=0;i<h4s.length;i++){
+        h4s[i].classList.toggle('white-color');
     }
 
     if(btnmode.classList.contains('btn-light')){
@@ -37,7 +53,7 @@ fetch("https://api.github.com/users/octocat")
         if(isNaN(user)){//if usr exist
             //set img
             //avatar_url
-            var img=document.getElementById('profile-img').innerHTML=`<img src=${user.avatar_url}>`;
+            document.getElementById('profile-img').innerHTML=`<img src=${user.avatar_url}>`;
 
             //set Name:
             var name=document.getElementById('name');
@@ -48,12 +64,12 @@ fetch("https://api.github.com/users/octocat")
             login.textContent="@"+user.login;
 
             //set Joined:
-            var date=document.getElementById('date');
+            // var date=document.getElementById('date');
             let d=new Date(user.created_at);
             date.textContent="Joined "+ d.getUTCDate()+" " +months[d.getUTCMonth()]+" "+d.getUTCFullYear();
             
             //set Bio:
-            var bio=document.getElementById('bio');
+            // var bio=document.getElementById('bio');
             if(isNaN(user.bio)){
                 bio.textContent=bio;
             }else{bio.textContent="This profile has no bio."}
@@ -104,7 +120,7 @@ fetch("https://api.github.com/users/octocat")
 
 //search
 var months=['Jan', 'Feb', 'Mar', 'Apr','May','Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'];
-var searchtext=document.getElementById('searchtext');
+
 var searchmsg=document.getElementById('searchmsg');
 
 function search(){
@@ -130,12 +146,12 @@ function search(){
             login.textContent="@"+user.login;
 
             //set Joined:
-            var date=document.getElementById('date');
+            // var date=document.getElementById('date');
             let d=new Date(user.created_at);
             date.textContent="Joined "+ d.getUTCDate()+" " +months[d.getUTCMonth()]+" "+d.getUTCFullYear();
             
             //set Bio:
-            var bio=document.getElementById('bio');
+            // var bio=document.getElementById('bio');
             if(user.bio){
                 bio.textContent=bio;
             }else{bio.textContent="This profile has no bio."}

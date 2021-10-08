@@ -10,7 +10,8 @@ body{
     align-items: center;
     justify-content: center;
 
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     transition: 0.9s;
 }
 
@@ -24,7 +25,7 @@ button{
     align-items: center;
     justify-content: center;
 
-    width: 50%;
+    width: 60%;
 }
 @media (max-width:370px){
     .main{
@@ -56,8 +57,8 @@ button{
     font-family:'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 13px;
-    line-height: 19px;
+    /* font-size: 13px; */
+    /* line-height: 19px; */
     text-align: right;
     letter-spacing: 2.5px;
 
@@ -78,8 +79,8 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 39px;
+    /* font-size: 26px; */
+    /* line-height: 39px; */
 }
 @media (max-width:370px){
     .definfer-mode button{
@@ -119,7 +120,7 @@ button{
     filter: brightness(0.3)
 }
 .dark-mode{
-    background-color:#141D2F ;
+    background-color:#141D2F !important;
 }
 .div-dark-mode{
     background:#1E2A47 !important; 
@@ -140,6 +141,11 @@ button{
     width: 100%;
     padding: 2%;
 }
+@media (max-width:300px){
+    .search{
+        flex-direction: column;
+    }
+}
 .text-search{
     cursor: pointer;
     background-image:url(assets/icon-search.svg) ;
@@ -154,7 +160,7 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    /* font-size: 12px; */
 
     color: #222731;
 
@@ -163,7 +169,12 @@ button{
     flex-basis: 70%;
     width: 100%;
     float: left;
+
+    outline-style: none;
 }
+/*::placeholder{
+    color: white;
+} */
 .search button{
     float: right;
     flex-basis: 10%;
@@ -177,10 +188,11 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 13px;
+    /* font-size: 13px; */
 
     color: #FFFFFF;
 }
+
 .search button:hover{
     background: #60ABFF;
     /* filter: brightness(1.5); */
@@ -198,9 +210,10 @@ button{
     font-style: normal;
     font-weight: bold;
     font-size: 10px;
+    padding-right: 2%;
 
     color: #F74646ed;
-    width:20px;
+    /* width:20px; */
     flex-basis: 20%;
 }
 
@@ -221,6 +234,17 @@ button{
     flex-direction: row;
     justify-content: left;
     align-items: center;
+}
+.profile-div{
+    background-color: transparent;
+    padding-right: 5%;
+}
+@media (max-width:300px){
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .header img{
     float: left ;
@@ -244,8 +268,8 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 39px;
+    /* font-size: 26px; */
+    /* line-height: 39px; */
     color: #2B3442;
 
     flex-basis: 50%;
@@ -255,8 +279,8 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    /* font-size: 16px; */
+    /* line-height: 24px; */
     color: #0079FF;
 }
 
@@ -264,8 +288,8 @@ button{
     font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
-    line-height: 22px;
+    /* font-size: 15px; */
+    /* line-height: 22px; */
     color: #697C9A;
     /* color: #FFFFFF; */
     width: 100%;
@@ -273,11 +297,11 @@ button{
     margin-top: 5px;
 }
 .bio{
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
-    line-height: 25px;
+    /* font-size: 15px; */
+    /* line-height: 25px; */
     color: #4B6A9B;
 
     margin-top: 5px;
@@ -304,25 +328,33 @@ button{
     align-items: center;
     justify-content: right;
 
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    /* font-size: 15px; */
     /* line-height: 22px; */
     color: #4B6A9B;
+    margin: 3%;
+    margin-left: 20%;
+}
+@media (max-width:700px){
+    .footer{
+        justify-content: center;
+    }
 }
 .collumn{
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     /* justify-content: center; */
+    width:100%;
 }
 .footer img{
     width:13px;
     /* filter: brightness(5); slika postaje bela*/
 }
 .elem{
-    margin-right: 10px;
+    padding-right: 10px;
 
     transition: 0.9s;
     width: 100%;
@@ -343,12 +375,17 @@ a:visited{
 
 @media (max-width:700px){
     .footer {
-        margin: 5px;
+        margin: 5%;
     }
 }
 @media (max-width:400px){
     .collumn{
         flex-direction: column;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: initial;
+        margin: 5%;
     }
 }
 
@@ -359,14 +396,26 @@ a:visited{
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    background: #F6F8FF;
+    background-color: #F6F8FF;
     border-radius: 10px;
     /* width: 90%; */
     padding: 5% 5% 5% 5%;
+    /* transition: 0.9s; */
+
+    margin: 3%;
+    margin-left: 20%;
 }
-@media (max-width:700){
+@media (max-width:700px){
     .center{
         justify-content: center;
+        margin: 0%;
+    }
+}
+@media (max-width:330px){
+    .center{
+        flex-direction: column;
+        justify-content: center;
+        align-items: initial;
     }
 }
 
@@ -378,6 +427,7 @@ a:visited{
     justify-content: center;
 
     margin-right: 10%;
+    width: 100%;
 }
 
 .elem-center{
@@ -385,22 +435,25 @@ a:visited{
 }
 
 .center span{
-    font-family: Space Mono;
+    font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: bold;
     font-size: 22px;
-    line-height: 33px;
+    /* line-height: 33px; */
     text-transform: uppercase;
     color: #2B3442;
 }
 
 h4{
     text-align: left;
-    font-family: 'Space Mono';
+    font-family: 'Space Mono', monospace;
     font-style: normal;
     font-weight: normal;
-    font-size: 13px;
-    line-height: 19px;
+    /* font-size: 13px; */
+    /* line-height: 19px; */
     
     color: #4B6A9B;
+}
+.white-color{
+    color: white !important;
 }
