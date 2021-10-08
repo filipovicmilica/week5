@@ -420,6 +420,7 @@ a:visited{
 }
 
 
+
 .collumn-center{
     display: flex;
     flex-direction: column;
@@ -457,3 +458,7 @@ h4{
 .white-color{
     color: white !important;
 }
+/* .not-available{
+    color: #4B6A9B;
+    filter: brightness(0.3);
+} */
