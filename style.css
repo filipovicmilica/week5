@@ -97,11 +97,14 @@ button{
     background-position: right;
     background-repeat:no-repeat ;
     color: #222731;
+    filter: brightness(0.2);
 
     /* visibility: hidden; */
 }
 .btn-dark:hover{
-    color:#90A4D4 ;
+    /* color:#90A4D4 ; */
+    color:#495675 ;
+    filter: brightness(1.3);
 }
 .btn-light{
     background-color: transparent;
@@ -109,10 +112,11 @@ button{
     background-image: url(assets/icon-sun.svg) ;
     background-position: right;
     background-repeat:no-repeat ;
-    color: white;
+    color: white;  
 }
-.btn-ligh:hover{
-    color:#222731;
+.btn-light:hover{
+    /* color:#222731; */
+    filter: brightness(0.3)
 }
 .dark-mode{
     background-color:#141D2F ;
@@ -121,7 +125,6 @@ button{
     background:#1E2A47 !important; 
     box-shadow:none !important;
 }
-
 
 /* search */
 .search{
@@ -180,6 +183,7 @@ button{
 }
 .search button:hover{
     background: #60ABFF;
+    /* filter: brightness(1.5); */
 }
 .blank{
     flex-basis: 20%;
@@ -299,15 +303,42 @@ button{
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    /* flex-wrap: wrap; */
-    
 
     font-family: 'Space Mono';
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
-    line-height: 22px;
+    /* line-height: 22px; */
     color: #4B6A9B;
+}
+.collumn{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.footer img{
+    width:13px;
+    /* filter: brightness(5); slika postaje bela*/
+}
+.elem{
+    margin-right: 10px;
+
+    transition: 0.9s;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:visited{
+    color:#4B6A9B;
+}
+.white-mode{
+    filter: brightness(5);
 }
 
 @media (max-width:700px){
@@ -316,7 +347,55 @@ button{
     }
 }
 @media (max-width:400px){
-    .footer{
+    .collumn{
         flex-direction: column;
     }
+}
+
+/* center */
+
+.center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #F6F8FF;
+    border-radius: 10px;
+    /* width: 90%; */
+    padding: 5% 5% 5% 5%;
+}
+
+
+.collumn-center{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+
+    margin-right: 10%;
+}
+
+.elem-center{
+    text-align: left;
+}
+
+.center span{
+    font-family: Space Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: #2B3442;
+}
+
+h4{
+    text-align: left;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 19px;
+    
+    color: #4B6A9B;
 }
