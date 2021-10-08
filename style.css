@@ -358,11 +358,16 @@ a:visited{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     background: #F6F8FF;
     border-radius: 10px;
     /* width: 90%; */
     padding: 5% 5% 5% 5%;
+}
+@media (max-width:700){
+    .center{
+        justify-content: center;
+    }
 }
 
 
