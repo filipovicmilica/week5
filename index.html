@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Week5</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="definfer-mode">
+      <span id="devfinder">devfinder</span>
+      <button class="btn-dark" id="btnmode" onclick='switchmode()'>Dark</button>
+    </div>
+    <script src="script.js"></script>
+
+    <div class="search" id="srch">
+      <input id="searchtext" class="text-search" type="text" placeholder="Search GitHub username..." value="">
+      <div class="blank">
+        <span id="searchmsg" class="res-msg">No results</span>
+      </div>
+      <button onclick='search()'>Search</button>
+    </div>
+
+    <div class="info" id="info">
+      <div class="header">
+        <!-- <img id='profile-img'> -->
+        <div id="profile-img" class="profile-div">
+        </div>
+        <section>
+          <section class="inner">
+            <h1 id="h1">
+              <span id="name">
+                 <!-- The Octocat -->
+              </span>
+              <p id="login" class="blue-header">
+                 <!-- @octocat -->
+              </p>
+            </h1>
+
+            <span class="date" id="date">
+              <!-- Joined 25 Jan 2011 -->
+              <!-- <input type="text" name="date"> -->
+            </span>
+          </section>
+          <p class="bio" id='bio'>
+            <!-- Bio... -->
+          </p>
+        </section>
+      </div>
+
+      <section class="center" id="center">
+        <div class="collumn-center">
+          <h4>Repos</h4>
+          <span class="location elem-center" id="repos">
+            <!-- 8 -->
+          </span>
+        </div>
+
+        <div class="collumn-center">
+          <h4>Folowers</h4>
+          <span class="elem-center" id="followers">
+            <!-- 3938 -->
+          </span>
+        </div>
+
+        <div class="collumn-center">
+          <h4>Following</h4>
+          <span id="following" class="elem-center">
+            <!-- 9 -->
+          </span>
+        </div>
+      </section>
+
+      <section class="footer">
+        <div class="collumn">
+          <span class="location elem" >
+            <img src="assets/icon-location.svg">
+            <span id="location">
+              <!-- San Francisco -->
+            </span>
+          </span>
+
+          <a href="https://github.blog">
+            <span class="elem">
+              <img src="assets/icon-website.svg">
+              <span id='blog'>
+                <!-- https://github.blog -->
+              </span>
+            </span>
+          </a>
+        </div>
+
+        <div class="collumn">
+          <span  class="elem">
+            <img src="assets/icon-twitter.svg">
+            <span id="twitter">
+              <!-- Not Available -->
+            </span>
+          </span>
+
+          <span class="company elem" >
+            <img src="assets/icon-company.svg">
+            <span id="company">
+              <!-- @github -->
+            </span>
+          </span>
+        </div>
+      </section>
+
+      <script src="script.js"></script>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
