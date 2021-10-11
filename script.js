@@ -1,19 +1,18 @@
-var btnmode = document.getElementById('btnmode');
-var body = document.querySelector('body');
-var devfinder = document.getElementById('devfinder');
-var srch = document.getElementById('srch');
-var info = document.getElementById('info');
-var h1 = document.getElementById('h1');
-var footerElems = document.getElementsByClassName('elem');
-var center = document.getElementById('center');
-var centerNumbers = document.getElementsByClassName('elem-center');
-var bio = document.getElementById('bio');
-var date = document.getElementById('date');
-var h4s = document.getElementsByTagName('h4');
-
-var searchtext = document.getElementById('searchtext');
-
 btnmode.onclick = function () {
+    let btnmode = document.getElementById('btnmode');
+    const body = document.querySelector('body');
+    let devfinder = document.getElementById('devfinder');
+    let srch = document.getElementById('srch');
+    let info = document.getElementById('info');
+    let h1 = document.getElementById('h1');
+    let footerElems = document.getElementsByClassName('elem');
+    let center = document.getElementById('center');
+    let centerNumbers = document.getElementsByClassName('elem-center');
+    let bio = document.getElementById('bio');
+    let date = document.getElementById('date');
+    let h4s = document.getElementsByTagName('h4');
+    var searchtext = document.getElementById('searchtext');
+
     body.classList.toggle('dark-mode');//ubacuje/izbacuje ovu klasu ako je nema/ima
     center.classList.toggle('dark-mode');
     btnmode.classList.toggle('btn-light');
@@ -57,14 +56,14 @@ fetch("https://api.github.com/users/octocat")
         else {//if user exist
             //set img
             searchmsg.style.display = 'none';
-            var img = document.getElementById('profile-img').innerHTML = `<img src=${user.avatar_url}>`;
+            let img = document.getElementById('profile-img').innerHTML = `<img src=${user.avatar_url}>`;
 
             //set Name:
-            var name = document.getElementById('name');
+            let name = document.getElementById('name');
             name.textContent = user.name;
 
             //set mini header-blue:
-            var login = document.getElementById('login');
+            let login = document.getElementById('login');
             login.textContent = "@" + user.login;
 
             //set Joined:
@@ -74,50 +73,74 @@ fetch("https://api.github.com/users/octocat")
 
             //set Bio:
             // var bio=document.getElementById('bio');
-            if (user.bio) {
-                bio.textContent = bio;
+            if(user.bio) {
+                bio.textContent = user.bio;
             } else { bio.textContent = "This profile has no bio" }
 
             //set Repos:
-            var repos = document.getElementById('repos');
+            let repos = document.getElementById('repos');
             repos.textContent = user.public_repos;
 
             //set Followers:
-            var followers = document.getElementById('followers');
+            let followers = document.getElementById('followers');
             followers.textContent = user.followers;
 
             //set Following:
-            var following = document.getElementById('following');
+            let following = document.getElementById('following');
             following.textContent = user.following;
 
             //set Location:
-            var location = document.getElementById('location');
-            location.textContent = user.location;
+            let location = document.getElementById('location');
+            if (user.location) {
+                location.textContent = user.location;
+            }
+            else {
+                location.textContent= "Not Available";
+                // location.classList.toggle('not-available');
+            }
 
             //set Twitter:
-            var twitter = document.getElementById('twitter');
+            let twitter = document.getElementById('twitter');
+            let linkt = document.getElementById('linkTwitter');
             if (user.twitter_username) {
                 twitter.textContent = user.twitter_username;
+                linkt.setAttribute("href","https://twitter.com/"+user.twitter_username);
+                linkt.setAttribute('aria-disabled','false'); 
             }
             else {
                 twitter.textContent = "Not Available";
-                // twitter.classList.toggle('not-available');
+                linkt.setAttribute("href",'');
+                linkt.setAttribute('aria-disabled','true');
             }
             //set blog:
-            var blog = document.getElementById('blog');
+            let blog = document.getElementById('blog');
+            let linkb = document.getElementById('linkBlog');
             if (user.blog) {
-                blog.textContent = "Not Available";
-                // blog.classList.toggle('not-available');
-            } else { blog.textContent = user.blog; }
-
+                blog.textContent = user.blog;
+                linkb.setAttribute("href",user.blog);
+                linkb.setAttribute('aria-disabled','false'); 
+            } else {
+                 blog.textContent = "Not Available";
+                 linkb.setAttribute("href",'');
+                 linkb.setAttribute('aria-disabled','true');
+                }
 
             //set company:
-            var company = document.getElementById('company');
+            let company = document.getElementById('company');
+            let linkc = document.getElementById('linkCompany');
             if (user.company) {
                 company.textContent = user.company;
+                if(user.company.includes('@',0)){
+                    linkc.setAttribute("href","https://github.com/"+user.company.substr(1,user.company.length));
+                    linkc.setAttribute('aria-disabled','false');
+                }else{
+                    linkc.setAttribute("href",'');
+                    linkc.setAttribute('aria-disabled','true');
+                }
             } else {
                 company.textContent = "Not Available";
-                // company.classList.toggle('not-available');
+                linkc.setAttribute("href",'');
+                linkc.setAttribute('aria-disabled','true');
             }
         }
     }).catch(e => console.log(e))
@@ -125,10 +148,8 @@ fetch("https://api.github.com/users/octocat")
 //search
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Avg', 'Sep', 'Okt', 'Nov', 'Dec'];
 
-var searchmsg = document.getElementById('searchmsg');
-
 function search() {
-
+    let searchmsg = document.getElementById('searchmsg');
     fetch("https://api.github.com/users/" + searchtext.value)
         .then(res => res.json())
         .then(user => {
@@ -139,14 +160,14 @@ function search() {
             else {//if user exist
                 //set img
                 searchmsg.style.display = 'none';
-                var img = document.getElementById('profile-img').innerHTML = `<img src=${user.avatar_url}>`;
+                let img = document.getElementById('profile-img').innerHTML = `<img src=${user.avatar_url}>`;
 
                 //set Name:
-                var name = document.getElementById('name');
+                let name = document.getElementById('name');
                 name.textContent = user.name;
 
                 //set mini header-blue:
-                var login = document.getElementById('login');
+                let login = document.getElementById('login');
                 login.textContent = "@" + user.login;
 
                 //set Joined:
@@ -156,50 +177,76 @@ function search() {
 
                 //set Bio:
                 // var bio=document.getElementById('bio');
-                if (user.bio) {
-                    bio.textContent = bio;
+                if(user.bio) {
+                    bio.textContent = user.bio;
                 } else { bio.textContent = "This profile has no bio" }
 
                 //set Repos:
-                var repos = document.getElementById('repos');
+                let repos = document.getElementById('repos');
                 repos.textContent = user.public_repos;
 
                 //set Followers:
-                var followers = document.getElementById('followers');
+                let followers = document.getElementById('followers');
                 followers.textContent = user.followers;
 
                 //set Following:
-                var following = document.getElementById('following');
+                let following = document.getElementById('following');
                 following.textContent = user.following;
 
                 //set Location:
-                var location = document.getElementById('location');
-                location.textContent = user.location;
+                let location = document.getElementById('location');
+               
+                if (user.location) {
+                    location.textContent = user.location;
+                }
+                else {
+                    location.textContent= "Not Available";
+                    // location.classList.toggle('not-available');
+                }
 
                 //set Twitter:
-                var twitter = document.getElementById('twitter');
+                let twitter = document.getElementById('twitter');
+                let linkt = document.getElementById('linkTwitter');
                 if (user.twitter_username) {
                     twitter.textContent = user.twitter_username;
+                    linkt.setAttribute("href","https://twitter.com/"+user.twitter_username);
+                    linkt.setAttribute('aria-disabled','false');
                 }
                 else {
                     twitter.textContent = "Not Available";
-                    // twitter.classList.toggle('not-available');
+                    linkt.setAttribute("href","");
+                    linkt.setAttribute('aria-disabled','true');
                 }
                 //set blog:
-                var blog = document.getElementById('blog');
+                let blog = document.getElementById('blog');
+                let linkb = document.getElementById('linkBlog');
                 if (user.blog) {
-                    blog.textContent = "Not Available";
-                    // blog.classList.toggle('not-available');
-                } else { blog.textContent = user.blog; }
+                    blog.textContent = user.blog;
+                    linkb.setAttribute("href",user.blog);
+                    linkb.setAttribute('aria-disabled','false');
+                } else {
+                     blog.textContent = "Not Available"; 
+                     linkb.setAttribute("href","");
+                     linkb.setAttribute('aria-disabled','true');
+                    }
 
 
                 //set company:
-                var company = document.getElementById('company');
+                let company = document.getElementById('company');
+                let linkc = document.getElementById('linkCompany');
                 if (user.company) {
                     company.textContent = user.company;
+                    if(user.company.includes('@',0)){
+                        linkc.setAttribute('aria-disabled','false');
+                        linkc.setAttribute("href","https://github.com/"+user.company.substr(1,user.company.length));
+                    }else{
+                        linkc.setAttribute("href",'');
+                        linkc.setAttribute('aria-disabled','true');
+                    }
                 } else {
                     company.textContent = "Not Available";
-                    // company.classList.toggle('not-available');
+                    linkc.setAttribute("href",'');
+                    linkc.setAttribute('aria-disabled','true');
                 }
             }
         }).catch(e => console.log(e))
